@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>cz-liang</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-02-21T18:14:51.377Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>cz-liang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>npm does not support nodejs</title>
+    <link href="http://example.com/2022/02/21/npm-does-not-support-nodejs/"/>
+    <id>http://example.com/2022/02/21/npm-does-not-support-nodejs/</id>
+    <published>2022-02-21T15:30:00.000Z</published>
+    <updated>2022-02-21T18:14:51.377Z</updated>
+    
+    <content type="html"><![CDATA[<p>win7不支持安装高版本node.js</p><p>win7支持最高的nodejs版本为v13.14.0</p><p>下载链接：<a href="https://nodejs.org/zh-cn/download/releases/">https://nodejs.org/zh-cn/download/releases/</a></p><p>安装高版本的node.js后出现 npm does not support nodejs 等问题<br>是因为npm版本与node版本不一致<br>删除npm后重新安装node即可<br>手动删除npm：<br>删除默认安装路径C:\Program Files\nodejs\node_modules下的npm文件夹</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;win7不支持安装高版本node.js&lt;/p&gt;
+&lt;p&gt;win7支持最高的nodejs版本为v13.14.0&lt;/p&gt;
+&lt;p&gt;下载链接：&lt;a href=&quot;https://nodejs.org/zh-cn/download/releases/&quot;&gt;https://nodejs.or</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>无法提交next文件到github问题解决</title>
+    <link href="http://example.com/2022/02/17/%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4next%E6%96%87%E4%BB%B6%E5%88%B0github%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    <id>http://example.com/2022/02/17/%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4next%E6%96%87%E4%BB%B6%E5%88%B0github%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</id>
+    <published>2022-02-17T07:17:12.000Z</published>
+    <updated>2022-02-21T18:14:51.380Z</updated>
+    
+    <content type="html"><![CDATA[<p>无法提交根本原因是next主题也是一个repo。</p><p>解决方法:</p><p>1.剪切 themes&#x2F;next&#x2F;.git文件夹到其它处</p><p>2.从暂存区删除该文件夹</p><p>git rm –cache themes&#x2F;next</p><p>3.使用git status查看状态</p><p>4.三步走: –&gt;git add .  –&gt;git commit -m “” –&gt;git push</p><p>5.再移回themes&#x2F;next&#x2F;.git文件夹</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;无法提交根本原因是next主题也是一个repo。&lt;/p&gt;
+&lt;p&gt;解决方法:&lt;/p&gt;
+&lt;p&gt;1.剪切 themes&amp;#x2F;next&amp;#x2F;.git文件夹到其它处&lt;/p&gt;
+&lt;p&gt;2.从暂存区删除该文件夹&lt;/p&gt;
+&lt;p&gt;git rm –cache themes&amp;#x2F;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo + Next 初体验</title>
+    <link href="http://example.com/2022/02/17/%E4%BD%BF%E7%94%A8Hexo%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0/"/>
+    <id>http://example.com/2022/02/17/%E4%BD%BF%E7%94%A8Hexo%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0/</id>
+    <published>2022-02-17T03:10:16.000Z</published>
+    <updated>2022-02-21T18:14:51.378Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo常用命令："><a href="#Hexo常用命令：" class="headerlink" title="Hexo常用命令："></a>Hexo常用命令：</h2><p>hexo new articleName #新建文章<br>hexo new page pageName #新建页面<br>hexo generate #生成静态页面至public目录<br>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #将.deploy目录部署到GitHub<br>hexo help  #查看帮助<br>hexo version  #查看Hexo的版本</p><h2 id="使用以下命令部署："><a href="#使用以下命令部署：" class="headerlink" title="使用以下命令部署："></a>使用以下命令部署：</h2><p>hexo clean<br>hexo generate<br>hexo deploy</p><h2 id="Next主题后续美化可参考"><a href="#Next主题后续美化可参考" class="headerlink" title="Next主题后续美化可参考"></a>Next主题后续美化可参考</h2><p><a href="https://siriusq.top/Next%E5%8D%87%E7%BA%A7-Mac%E8%BF%81%E7%A7%BB.html">https://siriusq.top/Next%E5%8D%87%E7%BA%A7-Mac%E8%BF%81%E7%A7%BB.html</a></p><p><img src="https://img0.baidu.com/it/u=4200074749,1662716100&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Hexo常用命令：&quot;&gt;&lt;a href=&quot;#Hexo常用命令：&quot; class=&quot;headerlink&quot; title=&quot;Hexo常用命令：&quot;&gt;&lt;/a&gt;Hexo常用命令：&lt;/h2&gt;&lt;p&gt;hexo new articleName #新建文章&lt;br&gt;hexo new pag</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
