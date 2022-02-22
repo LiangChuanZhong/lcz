@@ -1,6 +1,5 @@
 ---
-layout: nvm node 包管理
-title: use
+title: nvm node 包管理
 date: 2022-02-22 12:21:24
 tags:
 ---
