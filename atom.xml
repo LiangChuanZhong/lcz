@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-21T18:14:51.377Z</updated>
+  <updated>2022-02-28T12:51:53.064Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,58 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JS继承的6种方式</title>
+    <link href="http://example.com/2022/02/28/JS%E7%BB%A7%E6%89%BF%E7%9A%846%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
+    <id>http://example.com/2022/02/28/JS%E7%BB%A7%E6%89%BF%E7%9A%846%E7%A7%8D%E6%96%B9%E5%BC%8F/</id>
+    <published>2022-02-28T04:03:09.000Z</published>
+    <updated>2022-02-28T12:51:53.064Z</updated>
+    
+    <content type="html"><![CDATA[<p>JS作为面向对象的弱类型语言，继承是其中非常强大的特性之一</p><span id="more"></span><!-- 文章适当文职截断 --><h1 id="JS继承的实现方式"><a href="#JS继承的实现方式" class="headerlink" title="JS继承的实现方式"></a>JS继承的实现方式</h1><p>要实现继承，首先得有一个父类，代码如下：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个动物类</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Animal</span> (name) &#123;</span><br><span class="line">  <span class="comment">// 属性</span></span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name || <span class="string">&#x27;Animal&#x27;</span></span><br><span class="line">  <span class="comment">// 实例方法</span></span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">sleep</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span> + <span class="string">&#x27;正在睡觉&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 原型方法</span></span><br><span class="line"><span class="title class_">Animal</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">eat</span> = <span class="keyword">function</span> (<span class="params">food</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span> + <span class="string">&#x27;正在吃&#x27;</span> + food)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="原型连继承"><a href="#原型连继承" class="headerlink" title="原型连继承"></a>原型连继承</h2><p><strong>核心：</strong> 将父类的实例作为子类的原型</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Cat</span> () &#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">Cat</span>.<span class="property"><span class="keyword">prototype</span></span> = <span class="keyword">new</span> <span class="title class_">Animal</span>()</span><br><span class="line"><span class="title class_">Cat</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">name</span> = <span class="string">&#x27;cat&#x27;</span></span><br><span class="line"><span class="comment">// Test Code</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> <span class="title class_">Cat</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(cat.<span class="property">name</span>)</span><br></pre></td></tr></table></figure><p>特点：</p><ol><li>非常纯粹的继承关系</li><li>父类新增的原型方法&#x2F;原型属性，子类都能访问到</li><li>简单，易于实现</li></ol><p>缺点：</p><ol><li>要想为子类新增属性和方法，必须在<code>JS new Animal() </code>这样的语句之后执行，不能放到构造器中</li></ol><h2 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h2><h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><p>参考：<a href="https://www.cnblogs.com/humin/p/4556820.html">原文地址</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;JS作为面向对象的弱类型语言，继承是其中非常强大的特性之一&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="JS" scheme="http://example.com/categories/JS/"/>
+    
+    
+    <category term="JS" scheme="http://example.com/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nvm node 包管理</title>
+    <link href="http://example.com/2022/02/22/nvmuse/"/>
+    <id>http://example.com/2022/02/22/nvmuse/</id>
+    <published>2022-02-22T04:21:24.000Z</published>
+    <updated>2022-02-28T12:51:53.065Z</updated>
+    
+    <content type="html"><![CDATA[<p>nvm node版本管理工具</p><h2 id="nvm下载地址"><a href="#nvm下载地址" class="headerlink" title="nvm下载地址"></a>nvm下载地址</h2><ul><li><a href="https://github.com/coreybutler/nvm-windows/tags">https://github.com/coreybutler/nvm-windows/tags</a></li><li>下载nvm-setup.zip文件，默认安装即可<br>（默认安装路径：C:\Users\Administrator\AppData\Roaming\nvm）</li><li>在此路径下才能管理操作，其他路径下会提示：This is not the package you are looking for: please go to <a href="http://nvm.sh/">http://nvm.sh</a><br>（可做其他配置，这里就直接在默认路径下管理node版本）</li></ul><h2 id="nvm常用命令"><a href="#nvm常用命令" class="headerlink" title="nvm常用命令"></a>nvm常用命令</h2><ul><li>nvm install version 安装指定node版本</li><li>nvm ls 查看安装的node版本列表</li><li>nvm use version 使用node不同版本</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;nvm node版本管理工具&lt;/p&gt;
+&lt;h2 id=&quot;nvm下载地址&quot;&gt;&lt;a href=&quot;#nvm下载地址&quot; class=&quot;headerlink&quot; title=&quot;nvm下载地址&quot;&gt;&lt;/a&gt;nvm下载地址&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://githu</summary>
+      
+    
+    
+    
+    <category term="前端环境" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83/"/>
+    
+    
+    <category term="Node" scheme="http://example.com/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
     <title>npm does not support nodejs</title>
     <link href="http://example.com/2022/02/21/npm-does-not-support-nodejs/"/>
     <id>http://example.com/2022/02/21/npm-does-not-support-nodejs/</id>
     <published>2022-02-21T15:30:00.000Z</published>
-    <updated>2022-02-21T18:14:51.377Z</updated>
+    <updated>2022-02-28T12:51:53.065Z</updated>
     
     <content type="html"><![CDATA[<p>win7不支持安装高版本node.js</p><p>win7支持最高的nodejs版本为v13.14.0</p><p>下载链接：<a href="https://nodejs.org/zh-cn/download/releases/">https://nodejs.org/zh-cn/download/releases/</a></p><p>安装高版本的node.js后出现 npm does not support nodejs 等问题<br>是因为npm版本与node版本不一致<br>删除npm后重新安装node即可<br>手动删除npm：<br>删除默认安装路径C:\Program Files\nodejs\node_modules下的npm文件夹</p>]]></content>
     
@@ -35,50 +82,87 @@
     
     
     
+    <category term="前端环境" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83/"/>
+    
+    
+    <category term="Node" scheme="http://example.com/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown 常用语法</title>
+    <link href="http://example.com/2022/01/17/Markdown-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/"/>
+    <id>http://example.com/2022/01/17/Markdown-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</id>
+    <published>2022-01-17T08:21:53.000Z</published>
+    <updated>2022-02-28T12:51:53.064Z</updated>
+    
+    <content type="html"><![CDATA[<p>一、标题<br>　一般使用 来进行层级标识。共 6 个层级，再多不识别。</p><h1 id="h1"><a href="#h1" class="headerlink" title="h1"></a>h1</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h6 id="h6"><a href="#h6" class="headerlink" title="h6"></a>h6</h6><p>　　注：h1 级别会默认带一个 <hr/></p><p>二、分隔线<br>　　至少三个 * 或 - 或 _ ，有空格也可以，不必连续。</p><hr><p>三、换行加缩进，输入法全角模式下两个空格（一般情况下中英文打字是用半角）<br>　　两个空格 + 一个回车<br>　　试试</p><p>四、代码<br>　　一行代码好像有简写，不过为了统一方便（偷懒，不想记），如下格式：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">link</span> <span class="attr">href</span>=<span class="string">&quot;http://aaa.com&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>　　即首尾各多行 &#96;&#96;&#96; 。</p><p>五、引用<br>　　符号是 &gt; ，引用里可以套引用，理论上无限嵌套。如：</p><blockquote><p>一级</p><blockquote><p>二级</p><blockquote><p>三级</p><blockquote><p>四级<br>…</p></blockquote></blockquote></blockquote></blockquote><p>　图片上传不了，请参考 <a href="https://www.cnblogs.com/liugang-vip/p/6337580.html%E3%80%82">https://www.cnblogs.com/liugang-vip/p/6337580.html。</a></p><p>六、强调<br>  　　<em>文本1</em>或 <em>文本1</em> 　　斜体；</p><p>　　<strong>文本2</strong>或者 <strong>文本2</strong> 　　加重强调；</p><p>　　<em><strong>文本3</strong></em> 或者  <em><strong>文本3</strong></em> 　　特别强调；</p><p>七、链接<br>　　格式：<a href="%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80">页面文字</a>，如：<a href="https://www.baidu.com/">百度</a>；</p><p>　　但是，md 中链接不支持 _blank，所以个人的写法还是直接写成：<a href="www.baidu.com" target="_blank">百度xx</a> ；</p><p>八、列表<br>　　有序列表（注意，’ . ‘ 后面要跟一个空格）：</p><ol><li>xxxx</li><li>xxxxx</li><li>xxxx</li></ol><p>　　无序列表（注意，’ * ‘ 后面要跟一个空格）：</p><ul><li>xxxx</li><li>xxxx</li><li>xxxxx</li></ul><p>　　也支持嵌套，使用时在嵌套列表前按 tab 或 空格 来缩进,去控制列表的层数。</p><p>九、图片<br>　　和 链接 类似，格式：</p><p> <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="Alt text"><br>十、表格</p><p>　注意：上面是三种不同的写法，第一种的分割线后面的冒号表示对齐方式，写在左边表示左对齐，右边为右对齐，两边都写表示居中。</p><p>十一、删除线<br>代码：</p><p><del>删除我吧</del></p><p>样式：<br> 删除我吧</p><p>十二、 转义</p><p>转义就是将一些特殊字符转换成正常显示的样子，和大多数编程语言相同使用反斜杠()表示。下面简单列举几个。<br>代码：</p><ul><li>\</li><li>`</li><li>*</li><li>!</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;一、标题&lt;br&gt;　一般使用 来进行层级标识。共 6 个层级，再多不识别。&lt;/p&gt;
+&lt;h1 id=&quot;h1&quot;&gt;&lt;a href=&quot;#h1&quot; class=&quot;headerlink&quot; title=&quot;h1&quot;&gt;&lt;/a&gt;h1&lt;/h1&gt;&lt;h2 id=&quot;h2&quot;&gt;&lt;a href=&quot;#h2&quot; cla</summary>
+      
+    
+    
+    
+    <category term="其他" scheme="http://example.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>无法提交next文件到github问题解决</title>
-    <link href="http://example.com/2022/02/17/%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4next%E6%96%87%E4%BB%B6%E5%88%B0github%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
-    <id>http://example.com/2022/02/17/%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4next%E6%96%87%E4%BB%B6%E5%88%B0github%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</id>
-    <published>2022-02-17T07:17:12.000Z</published>
-    <updated>2022-02-21T18:14:51.380Z</updated>
+    <link href="http://example.com/2022/01/17/%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4next%E6%96%87%E4%BB%B6%E5%88%B0github%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    <id>http://example.com/2022/01/17/%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4next%E6%96%87%E4%BB%B6%E5%88%B0github%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</id>
+    <published>2022-01-17T07:17:12.000Z</published>
+    <updated>2022-02-28T12:51:53.066Z</updated>
     
-    <content type="html"><![CDATA[<p>无法提交根本原因是next主题也是一个repo。</p><p>解决方法:</p><p>1.剪切 themes&#x2F;next&#x2F;.git文件夹到其它处</p><p>2.从暂存区删除该文件夹</p><p>git rm –cache themes&#x2F;next</p><p>3.使用git status查看状态</p><p>4.三步走: –&gt;git add .  –&gt;git commit -m “” –&gt;git push</p><p>5.再移回themes&#x2F;next&#x2F;.git文件夹</p>]]></content>
+    <content type="html"><![CDATA[<p>无法提交根本原因是next主题也是一个repo。</p><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol><li><p>剪切 themes&#x2F;next&#x2F;.git文件夹到其它处</p></li><li><p>从暂存区删除该文件夹<br>git rm –cache themes&#x2F;next</p></li><li><p>使用git status查看状态</p></li><li><p>三步走: –&gt;git add .  –&gt;git commit -m “” –&gt;git push</p></li><li><p>再移回themes&#x2F;next&#x2F;.git文件夹</p></li></ol>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;无法提交根本原因是next主题也是一个repo。&lt;/p&gt;
-&lt;p&gt;解决方法:&lt;/p&gt;
-&lt;p&gt;1.剪切 themes&amp;#x2F;next&amp;#x2F;.git文件夹到其它处&lt;/p&gt;
-&lt;p&gt;2.从暂存区删除该文件夹&lt;/p&gt;
-&lt;p&gt;git rm –cache themes&amp;#x2F;</summary>
+&lt;h3 id=&quot;解决方法&quot;&gt;&lt;a href=&quot;#解决方法&quot; class=&quot;headerlink&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;解决方法&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;剪切 themes&amp;#x2F;next&amp;#</summary>
       
     
     
     
+    <category term="其他" scheme="http://example.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
     
   </entry>
   
   <entry>
-    <title>Hexo + Next 初体验</title>
-    <link href="http://example.com/2022/02/17/%E4%BD%BF%E7%94%A8Hexo%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0/"/>
-    <id>http://example.com/2022/02/17/%E4%BD%BF%E7%94%A8Hexo%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0/</id>
-    <published>2022-02-17T03:10:16.000Z</published>
-    <updated>2022-02-21T18:14:51.378Z</updated>
+    <title>Hexo + Next 博客建设</title>
+    <link href="http://example.com/2022/01/17/Hexo+Next/"/>
+    <id>http://example.com/2022/01/17/Hexo+Next/</id>
+    <published>2022-01-17T03:10:16.000Z</published>
+    <updated>2022-02-28T12:51:53.050Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Hexo常用命令："><a href="#Hexo常用命令：" class="headerlink" title="Hexo常用命令："></a>Hexo常用命令：</h2><p>hexo new articleName #新建文章<br>hexo new page pageName #新建页面<br>hexo generate #生成静态页面至public目录<br>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br>hexo deploy #将.deploy目录部署到GitHub<br>hexo help  #查看帮助<br>hexo version  #查看Hexo的版本</p><h2 id="使用以下命令部署："><a href="#使用以下命令部署：" class="headerlink" title="使用以下命令部署："></a>使用以下命令部署：</h2><p>hexo clean<br>hexo generate<br>hexo deploy</p><h2 id="Next主题后续美化可参考"><a href="#Next主题后续美化可参考" class="headerlink" title="Next主题后续美化可参考"></a>Next主题后续美化可参考</h2><p><a href="https://siriusq.top/Next%E5%8D%87%E7%BA%A7-Mac%E8%BF%81%E7%A7%BB.html">https://siriusq.top/Next%E5%8D%87%E7%BA%A7-Mac%E8%BF%81%E7%A7%BB.html</a></p><p><img src="https://img0.baidu.com/it/u=4200074749,1662716100&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500"></p>]]></content>
+    <content type="html"><![CDATA[<p>&lt; !– more –&gt;</p><h2 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h2><ul><li>hexo new articleName #新建文章</li><li>hexo new page pageName #新建页面</li><li>hexo generate #生成静态页面至public目录</li><li>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</li><li>hexo deploy #将.deploy目录部署到GitHub</li><li>hexo help  #查看帮助</li><li>hexo version  #查看Hexo的版本</li></ul><h2 id="使用以下命令部署"><a href="#使用以下命令部署" class="headerlink" title="使用以下命令部署"></a>使用以下命令部署</h2><ul><li>hexo clean</li><li>hexo generate</li><li>hexo deploy</li></ul><h3 id="Next主题后续美化可参考"><a href="#Next主题后续美化可参考" class="headerlink" title="Next主题后续美化可参考"></a>Next主题后续美化可参考</h3><p><a href="https://siriusq.top/Next%E5%8D%87%E7%BA%A7-Mac%E8%BF%81%E7%A7%BB.html">https://siriusq.top/Next%E5%8D%87%E7%BA%A7-Mac%E8%BF%81%E7%A7%BB.html</a></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;Hexo常用命令：&quot;&gt;&lt;a href=&quot;#Hexo常用命令：&quot; class=&quot;headerlink&quot; title=&quot;Hexo常用命令：&quot;&gt;&lt;/a&gt;Hexo常用命令：&lt;/h2&gt;&lt;p&gt;hexo new articleName #新建文章&lt;br&gt;hexo new pag</summary>
+    <summary type="html">&lt;p&gt;&amp;lt; !– more –&amp;gt;&lt;/p&gt;
+&lt;h2 id=&quot;Hexo常用命令&quot;&gt;&lt;a href=&quot;#Hexo常用命令&quot; class=&quot;headerlink&quot; title=&quot;Hexo常用命令&quot;&gt;&lt;/a&gt;Hexo常用命令&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;hexo new artic</summary>
       
     
     
     
+    <category term="其他" scheme="http://example.com/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
     
   </entry>
   
