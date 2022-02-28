@@ -1,7 +1,8 @@
 ---
 title: nvm node 包管理
 date: 2022-02-22 12:21:24
-tags:
+tags: [Node]
+categories: 前端环境
 ---
 
 nvm node版本管理工具

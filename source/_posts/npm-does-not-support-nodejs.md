@@ -1,7 +1,8 @@
 ---
 title: npm does not support nodejs
 date: 2022-02-21 23:30:00
-tags:
+tags: [Node]
+categories: 前端环境
 ---
 
 win7不支持安装高版本node.js
