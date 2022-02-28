@@ -115,7 +115,7 @@ deploy:
   repository: 'git@github.com:cz-liang/lcz.git'
   branch: 'gh-pages'
 
-root: /lcz
+root: /
 
 # ## feed   
 # feed:
