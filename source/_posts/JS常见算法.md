@@ -48,11 +48,11 @@ function isBalance(str) {
     let arr = str.split('')
     let new_arr = []
     for(let i = 0;i<arr.length;i++) {
-        // 把右括号加入栈（数组）中
+        // 把左括号加入栈（数组）中
         if(arr[i] == '(' || arr[i] == '{' || arr[i] == '['){
             new_arr.push(arr[i])
         }else {
-            // 然后判断出现的左括号是否和最后加入栈中（数组最后一项）的右括号匹配
+            // 然后判断出现的右括号是否和最后加入栈中（数组最后一项）的左括号匹配
             if(arr[i] == ')' && new_arr.pop() != '(') return false
             if(arr[i] == '}' && new_arr.pop() != '{') return false
             if(arr[i] == ']' && new_arr.pop() != '[') return false
