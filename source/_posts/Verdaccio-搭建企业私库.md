@@ -7,13 +7,13 @@ categories: npm
 
 
 
-## 前言
+# 前言
 私有 npm 库，我想是每个团队都会实践和经历的一个阶段。实现私有 npm 的方式有很多种，例如基于私有 Git 仓库、基于 npm 官方提供的私有功能（付费）、Verdaccio 等等。但是，综合比较各种因素下来（不要钱、还好用），Verdaccio 都略胜前面两者。
 
 <!-- more -->
 <!-- 文章适当文字截断 -->
 
-# 一、安装
+# 安装
 
 Verdaccio 的安装启动过程较为简单。首先是全局安装 Verdaccio：
 ```JS
@@ -25,7 +25,7 @@ npm i -g verdaccio
 verdaccio 
 ```
 此时浏览器打开可访问： http://localhost:4873/
-# 二、配置修改
+# 配置修改
 config.yaml默认配置
 ```JS
 storage: ./storage
@@ -145,15 +145,15 @@ search: true
 重启Verdaccio就可以通过ip访问：http://192.168.18.170:4873/
 后续发布包也可以搜索
 
-# 三、基本使用
-#### 注册用户
+# 基本使用
+## 注册用户
 ```JS
 npm adduser --registry http://192.168.18.170:4873/
 ```
 接着，它会要求你填写用户名、密码和邮箱，用于登陆私有 npm 库
 注册的用户信息会存储在 ~/.config/verdaccio/htpasswd 文件中，
 想要删除用户可直接在htpasswd文件中删除
-#### 添加、切换源
+## 添加、切换源
 nrm 来切换源
 ```JS
 npm i -g nrm
@@ -172,12 +172,13 @@ nrm ls
 nrm use dop
 ```
 
-#### 使用自定义源发布npm包
+## 使用自定义源发布npm包
 在组件库代码项目中执行
 ```JS
 npm publish
 ```
 组件库封装并发布看另外一篇文章
+[VUE-自定义组件库搭建](https://cz-liang.github.io/lcz/2022/06/07/VUE-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E5%BA%93%E6%90%AD%E5%BB%BA/)
 
 ##注意
 * **以上为本地搭建，真正发布到服务器在生产环境下使用 是直接复制C:\Users\EDY\AppData\Roaming\verdaccio文件夹？还是重装？后续实验一下**
@@ -188,7 +189,7 @@ npm publish
 
 
 
-### 参考：
+# 参考：
 [Verdaccio，cnpm，git仓库搭建企业级私库](https://juejin.cn/post/6844904033354776590)
 [记录windows环境下用verdaccio搭建npm私有库](https://blog.csdn.net/weixin_43249693/article/details/84453017?spm=1001.2101.3001.6650.19&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-19-84453017-blog-114261826.pc_relevant_antiscanv2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-19-84453017-blog-114261826.pc_relevant_antiscanv2&utm_relevant_index=25)
 [使用 Verdaccio 搭建一个企业级私有 npm 库](https://blog.csdn.net/qq_42049445/article/details/114261826)
