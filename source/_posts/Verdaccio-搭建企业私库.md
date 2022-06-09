@@ -180,9 +180,65 @@ npm publish
 组件库封装并发布看另外一篇文章
 [VUE-自定义组件库搭建](https://cz-liang.github.io/lcz/2022/06/07/VUE-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E5%BA%93%E6%90%AD%E5%BB%BA/)
 
-##注意
-* **以上为本地搭建，真正发布到服务器在生产环境下使用 是直接复制C:\Users\EDY\AppData\Roaming\verdaccio文件夹？还是重装？后续实验一下**
+# 使用pm2管理进程
+在确定verdaccio安装成功（本地可以正常运行并发包）的情况下，使用pm2能更好的管理verdaccio服务（需要node.js环境），避免服务被错误关闭，进程被中断的情况。
+## pm2简介
+pm2是node进程管理工具，可以用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。关于pm2的内容这里不做过多介绍，大家可以去官网或者其他博客查看了解，后文会附上pm2的常用命令。
+## 全局安装pm2
+```JS
+npm install pm2 -g
+```
+## 使用pm2启动verdaccio
+**pm2 start verdaccio**启动会报错
+* 需要找到verdaccio安装目录的bin文件夹中的verdaccio启动文件启动成功
+（路径：D:\nvm\v16.14.2\node_modules\verdaccio\bin）
+* 然后：
+```JS
+pm2 start D:\nvm\v16.14.2\node_modules\verdaccio\bin\verdaccio
+```
+* pm2 show verdaccio 查看该进程详细信息
+* pm2 logs 查看错误日志
+* pm2… …pm2常用命令文末附上
+## 区别
+在这个路径C:\Users\EDY\AppData\Roaming\verdaccio直接**verdaccio**启动的服务发的包和pm2启动服务进程（路径：D:\nvm\v16.14.2\node_modules\verdaccio\bin）发的包因为位置不同所以不共用
+<font color=#FF0000 >* 生产环境需要在pm2启动verdaccio进程的状态下发布包</font>
+
+# windows下pm2设置开机自启动
+pm2只是保证verdaccio进程不会挂掉，但是pm2自身可会因为机器重启没有启动
+
+以下为设置pm2开机自启动方法：
+* 安装windows自启动包
+```JS
+npm install pm2-windows-startup -g
+```
+* 执行命令
+```JS
+pm2-startup install
+```
+* 使用pm2启用项目
+```JS
+pm2 start 路径 --name 名称
+```
+* 启动所有要管理的应用程序后，保存要在机器重新启动时重新生成的列表
+```JS
+pm2 save
+```
+* 生成开机自启动服务
+```JS
+pm2 startup
+```
+* 开机服务
+```JS
+systemctl enable pm2-root
+```
+* 重启电脑可以查看
+```JS
+pm2 ls 
+```
+
+## 注意
 同域下测试过，用其他电脑通过ip访问可下载依赖包并正常使用
+后续放到服务器需要装相关环境（node等）
 
 
 
