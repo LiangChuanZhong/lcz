@@ -7,6 +7,8 @@ categories: 其他
 
 无法提交根本原因是next主题也是一个repo。
 
+<!-- more -->
+
 ### 解决方法
 
 1. 剪切 themes/next/.git文件夹到其它处

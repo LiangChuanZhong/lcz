@@ -9,6 +9,8 @@ win7不支持安装高版本node.js
 
 win7支持最高的nodejs版本为v13.14.0
 
+<!-- more -->
+
 下载链接：https://nodejs.org/zh-cn/download/releases/
 
 

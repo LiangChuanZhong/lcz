@@ -7,6 +7,8 @@ categories: 前端环境
 
 nvm node版本管理工具
 
+<!-- more -->
+
 ## nvm下载地址
 - https://github.com/coreybutler/nvm-windows/tags
 - 下载nvm-setup.zip文件，默认安装即可

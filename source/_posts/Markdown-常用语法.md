@@ -5,6 +5,8 @@ tags: [Markdown]
 categories: 其他
 ---
 
+ Markdown 常用语法
+<!-- more -->
 
 一、标题
 　一般使用 来进行层级标识。共 6 个层级，再多不识别。
